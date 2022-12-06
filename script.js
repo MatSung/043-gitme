@@ -1,16 +1,16 @@
-let kiekis = 0;
-let atsakymas = "";
-if(kiekis <= 0){
-    atsakymas = "ne grupė";
-} else if(kiekis == 1){
-    atsakymas = "solo"
-} else if(kiekis == 2){
-    atsakymas = "duetas";
-}else if(kiekis == 3){
-    atsakymas = "trio";
-} else if (kiekis == 4){
-    atsakymas = kvartetas;
+let amount = 0;
+let answer = "";
+if(amount <= 0){
+    answer = "ne grupė";
+} else if(amount == 1){
+    answer = "solo"
+} else if(amount == 2){
+    answer = "duetas";
+}else if(amount == 3){
+    answer = "trio";
+} else if (amount == 4){
+    answer = "kvartetas";
 } else{
-    atsakymas = "didelė grupė";
+    answer = "didelė grupė";
 } 
-console.log(atsakymas);
+console.log(answer);
