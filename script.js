@@ -1,5 +1,8 @@
-console.assert(alphabetOrder('alphabetical') == 'aaabcehillpt');
+console.log(plusPlus(10,3));
 
-function alphabetOrder(string){
-    return [...string].sort().join('');
+function plusPlus(number, addedAmount){
+    for (let i = 0; i < addedAmount; i++) {
+        number++;
+    }
+    return number;
 }
