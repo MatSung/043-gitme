@@ -1,11 +1,5 @@
+console.assert(alphabetOrder('alphabetical') == 'aaabcehillpt');
 
-
-checkAge(20);
-
-function checkAge(age){
-    return (age > 18) ? true : confirm("did parents allow you?");
-}
-
-function confirm(message){
-    console.log(message);
+function alphabetOrder(string){
+    return [...string].sort().join('');
 }
