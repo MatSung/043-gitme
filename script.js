@@ -1,4 +1,4 @@
-let kvartetas = 0;
+let kiekis = 0;
 let atsakymas = "";
 if(kiekis <= 0){
     atsakymas = "ne grupė";
