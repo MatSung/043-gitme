@@ -1,14 +1,10 @@
-let ageTable = document.querySelector("#age-table");
-console.log(ageTable);
+let myButton = document.getElementById("my-button");
 
-let firstTd = document.querySelector("td");
-console.log(firstTd);
+let firstInput = document.getElementById("input-1");
+let secondInput = document.getElementById("input-2");
 
-let allLabels = document.querySelectorAll("label");
-console.log(allLabels);
+myButton.addEventListener("click",() => {
+    secondInput.value = firstInput.value;
+    firstInput.value = "";
+});
 
-let firstInput = document.querySelector("form > input");
-console.log(firstInput);
-
-let secondInput = document.querySelector("form > input:nth-child(2)");
-console.log(secondInput);
