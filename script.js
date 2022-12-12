@@ -1,10 +1,8 @@
-let myButton = document.getElementById("my-button");
+let headerElement = document.querySelector("#my-header");
+headerElement.textContent = `Width: ${window.innerWidth}, Height: ${window.innerHeight}.`;
 
-let firstInput = document.getElementById("input-1");
-let secondInput = document.getElementById("input-2");
+window.addEventListener("resize", () =>{reportWindowSize()});
 
-myButton.addEventListener("click",() => {
-    secondInput.value = firstInput.value;
-    firstInput.value = "";
-});
-
+function reportWindowSize(){
+    headerElement.textContent = `Width: ${window.innerWidth}, Height: ${window.innerHeight}.`;
+}
