@@ -15,6 +15,6 @@ class Book{
     }
 }
 
-let testBook = new Book("Knyga", "Autorius", 1999);
+const testBook = new Book("Knyga", "Autorius", 1999);
 testBook.nameAndAuthor();
 testBook.howOld();
