@@ -9,8 +9,7 @@ class Book{
         console.log(this.name + " - " + this.author);
     }
     howOld(){
-        let currentYear = new Date().getFullYear()
-        let ageAsOfNow = currentYear - this.year;
+        let ageAsOfNow = new Date().getFullYear() - this.year;
         console.log(ageAsOfNow);
     }
 }
