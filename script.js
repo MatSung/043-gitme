@@ -1,19 +1,12 @@
-class Book{
-    constructor(name, author, year){
-        this.name = name;
-        this.author = author;
-        this.year = year;
-        
+class Animal {
+    constructor(name) {
+      this.name = name;
     }
-    nameAndAuthor(){
-        console.log(this.name + " - " + this.author);
+  }
+  class Rabbit extends Animal {
+    constructor(name) {
+      super(name);
+      this.created = Date.now();
     }
-    howOld(){
-        let ageAsOfNow = new Date().getFullYear() - this.year;
-        console.log(ageAsOfNow);
-    }
-}
-
-const testBook = new Book("Knyga", "Autorius", 1999);
-testBook.nameAndAuthor();
-testBook.howOld();
+  }
+  let rabbit = new Rabbit("White Rabbit");
