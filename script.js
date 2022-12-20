@@ -10,8 +10,14 @@ function getData(url) {
 
 function fillTable(data, users) {
     let table = document.getElementById("table");
+    let tableHead = document.createElement("thead");
+    table.append(tableHead);
+
+
     let tableHeadRow = document.createElement("tr");
     let objectKeys = Object.keys(data[0]);
+
+    
 
     // prideti Name prie heade
     let nameOfPosterHead = document.createElement("th");
@@ -24,7 +30,10 @@ function fillTable(data, users) {
         newHeadCell.textContent = element;
         tableHeadRow.append(newHeadCell);
     });
-    table.append(tableHeadRow);
+    tableHead.append(tableHeadRow);
+    let tableBody = document.createElement("tbody");
+    table.append(tableBody);
+
     data.forEach(element => {
         let newRow = document.createElement("tr");
 
@@ -42,8 +51,10 @@ function fillTable(data, users) {
                 newRow.append(newTd);
             }
         }
-        table.append(newRow);
+
+        tableBody.append(newRow);
     });
+
 }
 
 function getUsers(data) {
