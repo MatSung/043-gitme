@@ -9,6 +9,16 @@ function getPosts(url) {
 
 function fillTable(data) {
     let table = document.getElementById("table");
+    let tableHeadRow = document.createElement("tr");
+    let objectKeys = Object.keys(data[0]);
+    
+    objectKeys.forEach(element => {
+        let newHeadCell = document.createElement("th");
+        newHeadCell.textContent = element;
+        tableHeadRow.append(newHeadCell);
+    });
+    table.append(tableHeadRow);
+
     data.forEach(element => {
         let newRow = document.createElement("tr");
         for (const key in element) {
@@ -22,6 +32,5 @@ function fillTable(data) {
         table.append(newRow);
     });
 }
-
 
 getPosts('https://jsonplaceholder.typicode.com/posts').then(data => { fillTable(data) });
