@@ -1,11 +1,12 @@
+let fs = require('fs');
 
-let os = require('os');
+const myArgs = process.argv.slice(2);
 
-function getCpuDetails(){
-    let data = {};
-    data.cpuName = os.cpus()[0].model;
-    data.count = os.cpus().length;
-    return data;
-}
+let fileName = myArgs[0];
+let fileContents = myArgs[1];
 
-console.log(getCpuDetails());
+fs.writeFile(fileName, fileContents, function (err) {
+    if (err) throw err;
+    console.log('Saved!');
+  }); 
+  
