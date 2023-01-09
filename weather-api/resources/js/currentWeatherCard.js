@@ -79,8 +79,93 @@ function generateCurrentWeatherCard(properties) {
     return cardElement;
 }
 
-function generateForecastTable(data){
+function generateForecastTable(forecasts){
+    let cardElement = document.createElement("div");
+    cardElement.classList.add("card", "mt-3");
+    cardElement.id = "card-current-forecast";
 
+    let cardHeader = document.createElement("div");
+    cardHeader.classList.add("card-header");
+    cardHeader.innerText = "Forecast table";
+    cardElement.append(cardHeader);
+
+    let cardBody = document.createElement("div");
+    cardBody.classList.add("card-body");
+    cardElement.append(cardBody);
+
+    let table = document.createElement("table");
+    table.classList.add("table", "table-sm", "w-auto");
+    
+    let tbody = document.createElement("tbody");
+    let thead = document.createElement("thead");
+
+    table.append(thead,tbody);
+    cardBody.append(table);
+
+    let topRow = document.createElement("tr");
+    let conditionRow = document.createElement("tr");
+    let temperatureRow = document.createElement("tr");
+    let feelsLikeRow = document.createElement("tr");
+    thead.append(topRow, conditionRow, temperatureRow, feelsLikeRow);
+    
+    let firstHead = document.createElement("th");
+    topRow.append(firstHead);
+
+    
+    let conditionHead = document.createElement("th");
+    conditionHead.scope = "row";
+    conditionHead.innerText = "Condition";
+    conditionRow.append(conditionHead);
+
+    let temperatureHead = document.createElement("th");
+    temperatureHead.scope = "row";
+    temperatureHead.innerText = "Temperature"
+    temperatureRow.append(temperatureHead);
+
+    let feelsLikeHead = document.createElement("th");
+    feelsLikeHead.scope = "row";
+    feelsLikeHead.innerText = "Feels like";
+    feelsLikeRow.append(feelsLikeHead);
+
+    let maxLength = 25;
+
+    // hours
+    for (let i = 0; i < (forecasts.length > maxLength ? maxLength : forecasts.length); i++) {
+        let th = document.createElement("th");
+        th.scope = "col";
+        let timeOfForecast = forecasts[i].forecastTimeUtc.slice(-8,-6) + "H";
+        th.innerText = timeOfForecast;
+        // "2023-01-09 15:00:00"
+        topRow.append(th);
+    }
+
+    
+    // conditions
+    for (let i = 0; i < (forecasts.length > maxLength ? maxLength : forecasts.length); i++) {
+        let td = document.createElement("td");
+        let image = document.createElement("img");
+        image.src =`./svg/${forecasts[i].conditionCode}.svg`;
+        image.alt = forecasts[i].conditionCode;
+        td.append(image);
+        conditionRow.append(td);        
+    }
+
+    // temperature
+    for (let i = 0; i < (forecasts.length > maxLength ? maxLength : forecasts.length); i++) {
+        let td = document.createElement("td");
+        td.innerText = forecasts[i].airTemperature + "C";
+        temperatureRow.append(td);
+    }
+
+    // feels like
+    for (let i = 0; i < (forecasts.length > maxLength ? maxLength : forecasts.length); i++) {
+        let td = document.createElement("td");
+        td.innerText = forecasts[i].feelsLikeTemperature + "C";
+        feelsLikeRow.append(td);
+    }
+
+
+    return cardElement;
 }
 
 function organiseData(singleForecast){
