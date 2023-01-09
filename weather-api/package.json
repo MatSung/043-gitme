@@ -1,0 +1,43 @@
+{
+  "name": "WeatherAppSkeleton",
+  "version": "0.0.1",
+  "main": "app.js",
+  "scripts": {
+    "server:prod": "npx cross-env NODE_ENV=production node ./bin/www",
+    "server:dev": "npx cross-env NODE_ENV=development nodemon ./bin/www",
+    "assets:development": "mix",
+    "assets:watch": "mix watch",
+    "assets:production": "mix --production",
+    "assets:dev": "npm run assets:development",
+    "assets:prod": "npm run assets:production"
+  },
+  "author": "hello@nonamez.name",
+  "license": "Beerware",
+  "bugs": {
+    "url": "https://github.com/nonamez/CAFS3/issues"
+  },
+  "homepage": "https://github.com/nonamez/CAFS3#readme",
+  "dependencies": {
+    "bootstrap": "^5.2.3",
+    "bootswatch": "^5.2.3",
+    "browserify-fs": "^1.0.0",
+    "cookie-parser": "^1.4.6",
+    "cross-env": "^7.0.3",
+    "express": "^4.17.1",
+    "https-browserify": "^1.0.0",
+    "lodash.debounce": "^4.0.8",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.20",
+    "os-browserify": "^0.3.0",
+    "path-browserify": "^1.0.1",
+    "request": "git+https://github.com/nonamez/request.git",
+    "stream-browserify": "^3.0.0",
+    "stream-http": "^3.2.0"
+  },
+  "devDependencies": {
+    "laravel-mix": "^6.0.0",
+    "resolve-url-loader": "^4.0.0",
+    "sass": "^1.42.1",
+    "sass-loader": "^12.1.0"
+  }
+}

@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="css/app.css" rel="stylesheet">
+
+	<title>Meteo App</title>
+</head>
+
+<body>
+	<div class="container mt-5" id="main-body">
+		<div class="card">
+			<div class="card-body">
+				<input type="text" class="form-control" placeholder="Enter place name" id="place">
+			</div>
+			<div class="list-group list-group-flush" id="place-suggestions"></div>
+		</div>
+
+		<!-- <div class="card mt-3" style="max-width: 540px;" id="card-current-weather">
+			<div class="row g-0">
+				<div class="col-md-4">
+					<img src="./svg/cloudy.svg" class="img-fluid rounded-start" alt="weather image" id="current-weather-image">
+				</div>
+				<div class="col-md-8">
+					<div class="card-body">
+						<h5 class="card-title">Place name - place-code</h5>
+						<table class="table table-borderless table-sm mt-3 w-auto">
+							<tbody>
+								<tr>
+									<th scope="row">Temperature:</th>
+									<td>value C°</td>
+								</tr>
+								<tr>
+									<th scope="row">Feels like:</th>
+									<td>value C°</td>
+								</tr>
+								<tr>
+									<th scope="row">Condition:</th>
+									<td>rain</td>
+								</tr>
+							</tbody>
+						</table>
+						<p class="card-text"><small class="text-muted">1999-01-01 08:00</small></p>
+					</div>
+				</div>
+			</div>
+		</div> -->
+		<div class="card-group mt-3" id="forecast-card-group">
+			<div class="card">
+				<div class="card-header">
+					Forecast table
+				</div>
+				<div class="card-body">
+					<table class="table w-auto table-sm">
+						<thead>
+						  <tr>
+							<th scope="col"></th>
+							<th scope="col">1H</th>
+							<th scope="col">2H</th>
+							<th scope="col">3H</th>
+						  </tr>
+						</thead>
+						<tbody>
+						  <tr>
+							<th scope="row">Condition</th>
+							<td><img src="./svg/fog.svg" alt="fog"></td>
+							<td><img src="./svg/fog.svg" alt="fog"></td>
+							<td><img src="./svg/fog.svg" alt="fog"></td>
+						  </tr>
+						  <tr>
+							<th scope="row">Temperature</th>
+							<td>-1</td>
+							<td>-2</td>
+							<td>-3</td>
+						  </tr>
+						  <tr>
+							<th scope="row">Feels like</th>
+							<td>-2</td>
+							<td>-3</td>
+							<td>-5</td>
+						  </tr>
+						</tbody>
+					  </table>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<script src="js/app.js"></script>
+</body>
+
+</html>
